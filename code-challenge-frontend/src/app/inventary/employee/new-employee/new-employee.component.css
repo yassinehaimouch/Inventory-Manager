@@ -1,0 +1,30 @@
+.form-container {
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.select-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  align-self: flex-end;
+}
+
+.example-chip-list {
+  width: 100%;
+}

@@ -1,0 +1,70 @@
+<div class="form-container">
+  <h2 *ngIf="!employeeDetail">ADD EMPLOYEE</h2>
+  <h2 *ngIf="employeeDetail">EDIT EMPLOYEE</h2>
+
+  <form [formGroup]="myForm">
+    <div class="input-container">
+      <mat-form-field class="input-field">
+        <input matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <input
+          matInput
+          type="email"
+          placeholder="Email"
+          formControlName="email"
+          required
+        />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field
+      class="select-field"
+      *ngIf="isDevicesLoaded && hasAvailableDevices"
+    >
+      <mat-label>Devices</mat-label>
+      <mat-select
+        formControlName="select"
+        (selectionChange)="selectedChange($event)"
+      >
+        <mat-option
+          *ngFor="let item of devices | filterDevice : selectedDevices"
+          [value]="item.id"
+          >{{ item.description }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <span *ngIf="isDevicesLoaded && !hasAvailableDevices"
+      >No devices available at the moment</span
+    >
+
+    <mat-chip-listbox aria-label="Fish selection">
+      <mat-chip-row *ngFor="let item of selectedDevices"
+        >{{ item.description
+        }}<button matChipRemove (click)="delete(item)">
+          <mat-icon>cancel</mat-icon>
+        </button></mat-chip-row
+      >
+    </mat-chip-listbox>
+    <br />
+  </form>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="saveDialog('update')"
+    *ngIf="employeeDetail"
+    class="submit-button"
+  >
+    Update
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="saveDialog('create')"
+    *ngIf="!employeeDetail"
+    class="submit-button"
+  >
+    Create
+  </button>
+</div>

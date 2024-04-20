@@ -1,0 +1,11 @@
+h2 {
+  text-align: center;
+}
+
+.form-container {
+  padding: 20px;
+}
+
+.submit-button {
+  align-self: flex-end;
+}

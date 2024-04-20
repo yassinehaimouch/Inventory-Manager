@@ -1,0 +1,60 @@
+<br />
+<h1>DEVICES</h1>
+<mat-divider></mat-divider><br />
+<div>
+  <div class="spacerBtn">
+    <button
+      mat-flat-button
+      color="primary"
+      class="demo-button"
+      (click)="openDialog()"
+    >
+      Add Device (+)
+    </button>
+  </div>
+</div>
+<mat-form-field>
+  <mat-label>Search by type or description</mat-label>
+  <input matInput (keyup)="applyFilter($event)" autocomplete="off" />
+</mat-form-field>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.type }}</td>
+    </ng-container>
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+      <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+    </ng-container>
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.isTaken ? "Not Available" : "Available" }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="options">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td
+        mat-cell
+        *matCellDef="let element; let i = index"
+        style="text-align: center"
+      >
+        <div class="example-button-row">
+          <button mat-button (click)="editDevice(element)" color="basic">
+            Edit
+          </button>
+          <button mat-button (click)="deleteDevice(element)" color="warn">
+            Delete
+          </button>
+        </div>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 25]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

@@ -1,0 +1,32 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  width: 20%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+.spacerBtn {
+  text-align: right;
+  margin-bottom: 1%;
+}
+
+span {
+  margin-left: 5px;
+  color: blue;
+  cursor: pointer;
+}
