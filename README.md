@@ -26,7 +26,7 @@ To run the project, follow these steps:
 2. Navigate to the `code-challenge-backend` directory:
 
     ```bash
-    cd code-challenge/code-challenge-backend
+    cd code-challenge-backend
     ```
 
 3. Run the following command to start the project:
@@ -44,10 +44,16 @@ This will start the backend of the project, and you can access it by navigating 
 2. Navigate to the `code-challenge-frontend` directory:
 
     ```bash
-    cd code-challenge/code-challenge-frontend
+    cd code-challenge-frontend
     ```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+2. Install Packages
+
+    ```bash
+    npm i
+    ```
+
+Then Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Requirements
 
