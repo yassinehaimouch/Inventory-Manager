@@ -23,10 +23,10 @@ To run the project, follow these steps:
 
 1. Open your terminal or command prompt.
 
-2. Navigate to the `code-challenge-backend` directory:
+2. Navigate to the `code-challenge-backend/src` directory:
 
     ```bash
-    cd code-challenge-backend
+    cd code-challenge-backend/src
     ```
 
 3. Run the following command to start the project:
